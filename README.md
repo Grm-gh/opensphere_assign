@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 📦 Deliverables
 
-## Getting Started
+### ✅ Working Prototype
+Live demo of the pagination-enabled editor:
 
-First, run the development server:
+🔗 https://opensphere-assign.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ✅ GitHub Repository
+The repository includes:
+- Clean project structure
+- Clear setup and run instructions
+- Well-separated editor, pagination, and layout logic
+- Readable and interview-ready code
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🧠 Pagination Approach
 
-## Learn More
+Pagination is implemented using a **visual, DOM-based approach** rather than inserting page-break nodes into the document schema.
 
-To learn more about Next.js, take a look at the following resources:
+**How it works:**
+1. The Tiptap editor renders content normally.
+2. The rendered content height is measured from the DOM.
+3. Page count is calculated based on A4 page height with standard margins.
+4. Content is visually segmented into page containers that resemble printed pages.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This approach keeps the ProseMirror document model clean while ensuring that the on-screen layout matches printed output.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### ⚠️ Trade-offs & Limitations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Pagination is visual, not semantic
+- Very complex tables may require additional handling
+- Header and footer repetition is not implemented yet
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+These trade-offs were chosen to prioritize editor stability, clean architecture, and print accuracy.
+
+---
+
+### 🔮 Improvements With More Time
+
+- Header and footer support
+- Manual page breaks
+- Improved table pagination across pages
+- Export to PDF/DOCX with identical layout
+- Performance optimizations for very long documents
+
+---
+
+### 🎤 Interview Preparation
+
+For the interview discussion, I am prepared to:
+- Explain the pagination strategy step-by-step
+- Walk through the codebase and design decisions
+- Discuss trade-offs and alternative approaches
+- Explain how this solution could be extended for production use
+
+---
